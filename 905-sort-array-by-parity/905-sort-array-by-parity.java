@@ -1,8 +1,8 @@
 class Solution {
     public int[] sortArrayByParity(int[] nums) {
        
-       int start =0;
-       int end =nums.length-1;
+       int flag =0;
+        int flag1 =nums.length-1;
         
         int[] ans = new int[nums.length];
         
@@ -10,12 +10,12 @@ class Solution {
         
         if(nums[i] % 2 == 0){
 
-        ans[start] = nums[i];
-            start++;
+        ans[flag] = nums[i];
+            flag++;
             
         } else {
-            ans[end] = nums[i];
-            end--;
+            ans[flag1] = nums[i];
+            flag1--;
         }
         
     }
