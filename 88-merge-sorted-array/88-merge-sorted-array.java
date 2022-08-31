@@ -39,9 +39,7 @@ class Solution {
             nums1[d] = mix[d];
         }
         
-       for(int a=0;a<nums1.length;a++){
-           nums1[a] = mix[a];
-       }
+      
         
     }
     
