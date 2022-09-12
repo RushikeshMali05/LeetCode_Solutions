@@ -3,7 +3,7 @@ class Solution {
         
         int start =0;
         int end = nums.length-1;
-        int min = nums[end];
+        int min = nums[0];
         
         if(nums[start] < nums[end]) return nums[start];
         
