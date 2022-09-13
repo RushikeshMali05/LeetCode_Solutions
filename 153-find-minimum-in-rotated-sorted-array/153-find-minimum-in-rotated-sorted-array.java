@@ -8,24 +8,23 @@ class Solution {
         if(nums.length == 1) return nums[0];
         
       
-        
+         if(nums[start] < nums[end]) {
+                  return nums[start];
+
+              }
+                
         while(start<=end){
-              if(nums[start] < nums[end]) return nums[start];
+             
             int mid = start + (end - start)/2;
+           
+          min = Math.min(min, nums[mid]);
             
-            if(mid>0 && nums[mid]<nums[mid-1]){
-                return nums[mid];
+            if(nums[end]<nums[mid]){
+                start = mid + 1;
+            } else {
+                end = mid-1;
             }
-            
-            if(nums[mid] >= nums[start] && nums[mid] > nums[end]) {
-                start = mid +1;
-            } else { 
-            end = mid-1;
-                }
-        
-        
-        
-        }
-        return nums[start];
     }
+        return min;
+}
 }
