@@ -12,14 +12,13 @@ class Solution {
                      end = mid   ;
             } else if(arr[mid] < arr[mid+1]){
                 start = mid + 1;
-            } else {
-                return mid;
-            }
+            
                 
             }
-            return start;
         }
-        
+                    return start;
+
         
         
     }
+}
