@@ -1,27 +1,18 @@
 class Solution {
     public int arraySign(int[] nums) {
-    
+        int sign =1;
         
-        double sum =1;
-        for(int i=0;i<=nums.length-1;i++){
-            sum = sum* nums[i];
-        
-      
-    }
-       System.out.println(sum);
-        return signFunc(sum);
-    }
-    
-    public int signFunc(double x){
-        if(x<0)
-            return -1;
+        for(int i=0;i<nums.length;i++){
             
-        if(x>0)
-            return 1;
-           
-        
-        return 0;      
+            if(nums[i] == 0){
+                return 0;
+            } else if(nums[i] > 0){
+                sign = sign*1;
+            } else {
+                sign = sign*(-1);
+            }
+            
+        }
+        return sign;
     }
-        
-    }
-    
+}
