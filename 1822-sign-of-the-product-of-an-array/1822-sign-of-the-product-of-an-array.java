@@ -1,6 +1,18 @@
 class Solution {
-   public int signOfX(double x){
-
+    public int arraySign(int[] nums) {
+    
+        
+        double sum =1;
+        for(int i=0;i<=nums.length-1;i++){
+            sum = sum* nums[i];
+        
+      
+    }
+       System.out.println(sum);
+        return signFunc(sum);
+    }
+    
+    public int signFunc(double x){
         if(x<0)
             return -1;
             
@@ -10,15 +22,6 @@ class Solution {
         
         return 0;      
     }
+        
+    }
     
-
-public int arraySign(int[] nums) {
-    double prod=1;
-   
-    for(int i=0; i<=nums.length-1; i++){
-        prod=prod*nums[i];
-    }
-
-    return signOfX(prod);
-}
-    }
