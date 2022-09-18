@@ -3,7 +3,7 @@ class Solution {
         
         if(x == 0) return 0;
         
-        long start =0;
+        long start =1;
         long end =x;
         long ans =0;
         
