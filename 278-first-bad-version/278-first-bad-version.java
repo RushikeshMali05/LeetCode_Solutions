@@ -12,7 +12,7 @@ public class Solution extends VersionControl {
             int mid  = start + (end - start)/2;
             
             if(isBadVersion(mid)){
-                ans = mid;
+               // ans = mid;
                 end = mid -1;
                 
             } else {
@@ -22,7 +22,7 @@ public class Solution extends VersionControl {
             
             
         }
-        return ans;
+        return start;
         
     }
 }
