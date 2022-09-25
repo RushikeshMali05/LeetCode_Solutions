@@ -1,41 +1,60 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int[] ans = {-1,-1};
         
-        int start = binarySearch(nums,target,true);
-        int end = binarySearch(nums,target,false);
+        int[] ans = new int[2];
         
-        ans[0] = start;
-        ans[1] = end;
-    
-    return ans;
-    }
-    public static int binarySearch(int[] nums,int target, boolean findStartIndex){
+        ans[0] = startIndex(nums,target);
+        ans[1] = lastIndex(nums, target);
         
-     int start =0;
-    int end = nums.length-1;
-    int ans =-1;
-         while(start<=end){
-            int mid = (start+end)/2;
-            
-            if(target< nums[mid]){
-           end = mid-1;
-            }
-             else if(target>nums[mid]){
-                 start=mid+1;
-             }
-                else{
-                ans = mid;
-                    if(findStartIndex){
-                        end = mid-1;
-                    }
-                    else{
-                        start=mid+1;
-                    }
-                }
-            }
         return ans;
-      
-}
+    }
+    
+    public int startIndex(int[] nums, int target){
+        
+        int start =0;
+        int end = nums.length-1;
+                    int index =-1;
+
+        while(start <= end){
+            
+            
+            int mid =  start + (end - start)/2;
+            
+            if(nums[mid] >= target){
+                end = mid-1;
+            } else {
+                start = mid+1;
+            }
+            
+            if(nums[mid] == target) index = mid;
+        }
+        return index;
+        
+    }
+    
+     public int lastIndex(int[] nums, int target){
+        
+        int start =0;
+        int end = nums.length-1;
+                    int index =-1;
+
+        while(start <= end){
+            
+            
+            int mid =  start + (end - start)/2;
+            
+            if(nums[mid] <= target){
+                start = mid+1;
+            } else {
+            end = mid-1;
+            }
+            
+            if(nums[mid] == target) index = mid;
+        }
+        return index;
+        
+    }
+    
+    
     
 }
