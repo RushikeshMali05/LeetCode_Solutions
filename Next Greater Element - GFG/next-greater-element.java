@@ -36,22 +36,21 @@ class GFG {
 class Solution{
     public static long[] nextLargerElement(long[] arr, int n) { 
         long[] ans = new long[arr.length];
-        
+        int i=0;
+        int j=arr.length-1;
         Stack<Long> stack = new Stack<>();
-        int i=arr.length-1;
         
-        while(i>=0){
-            while(!stack.empty() && arr[i] > stack.peek()){
-                ans[i] = stack.pop();
-            } 
-            
-            if(stack.empty()) {
-                ans[i] = -1;
-            } else {
-                ans[i] = stack.peek();
+        while(j>=0){
+            while(!stack.empty() && arr[j] > stack.peek()){
+                stack.pop();
             }
-            stack.push(arr[i]);
-            i--;
+            if(stack.empty()){
+                ans[j] = -1;
+            } else {
+                ans[j] = stack.peek();
+            }
+            stack.push(arr[j]);
+            j--;
         }
         return ans;
     } 
