@@ -39,7 +39,7 @@ class Solution {
     void immediateSmaller(int arr[], int n) {
         // int[] ans = new int[n];
         for(int i=0;i<arr.length-1;i++){
-            arr[i]=arr[i]>arr[i+]
+            arr[i]=arr[i]>arr[i+1]?arr[i+1]:-1;
         }
         arr[arr.length-1]=-1;
         // Stack<Integer> stack = new Stack<>();
