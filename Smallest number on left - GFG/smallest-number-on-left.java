@@ -31,14 +31,12 @@ class GFG{
 class Solution{
     static List<Integer> leftSmaller(int n, int a[])
     {
-        
-        List<Integer> ans = new ArrayList<>();
         Stack<Integer> stack = new Stack<>();
+        List<Integer> ans = new ArrayList<>();
         
         int i=0;
-        int j=n-1;
         
-        while(i<=j){
+        while(i<n){
             while(!stack.empty() && a[i] <= stack.peek()){
                 stack.pop();
             }
