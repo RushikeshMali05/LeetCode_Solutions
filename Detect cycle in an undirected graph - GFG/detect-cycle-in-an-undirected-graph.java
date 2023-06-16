@@ -32,50 +32,25 @@ class GFG {
 // } Driver Code Ends
 
 
-// class Solution {
-//     // Function to detect cycle in an undirected graph.
-//     public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
-//         boolean[] vis = new boolean[V];
-        
-//         for(int i=0;i<=V;i++){
-//             if(vis[i] == false){
-//                 if(detect(i, -1, vis, adj)) return true;
-//             }
-//         }
-//         return false;
-//     }
-//     private boolean detect(int src, int parent, boolean[] vis, ArrayList<ArrayList<Integer>> adj){
-//         vis[src] = true;
-//         for(int adjnode : adj.get(src)){
-//                 if(vis[adjnode] == false){
-//                     if(detect(adjnode, src, vis, adj)) return true;
-//                 } else if(adjnode!=parent) return true;  
-//             }     
-//         return false;
-//     }
-// }
-
-
 class Solution {
     // Function to detect cycle in an undirected graph.
     public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
-        // Code here
-        int[] vis=new int[V];
+        boolean[] vis = new boolean[V];
+        
         for(int i=0;i<V;i++){
-            if(vis[i]==0){
-                if(dfs(i,-1,vis,adj)==true) return true;
+            if(vis[i] == false){
+                if(detect(i, -1, vis, adj)) return true;
             }
         }
         return false;
     }
-    public boolean dfs(int node,int parent,int[] vis,ArrayList<ArrayList<Integer>> adj){
-        vis[node]=1;
-        for(Integer it: adj.get(node)){
-            if(vis[it]==0){
-                if(dfs(it,node,vis,adj)==true) return true;
-                
-            }else if(it!=parent) return true;
-        }
+    private boolean detect(int src, int parent, boolean[] vis, ArrayList<ArrayList<Integer>> adj){
+        vis[src] = true;
+        for(int adjnode : adj.get(src)){
+                if(vis[adjnode] == false){
+                    if(detect(adjnode, src, vis, adj)) return true;
+                } else if(adjnode!=parent) return true;  
+            }     
         return false;
     }
 }
