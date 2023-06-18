@@ -39,11 +39,11 @@ class Solution {
     public ArrayList<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
         ArrayList<Integer> ans = new ArrayList<>();
         boolean[] vis = new boolean[V];
-        vis[0] = true;
         dfs(0, ans, vis, adj);
         return ans;
     }
-    public void dfs (int node, ArrayList<Integer> ans, boolean[] vis, ArrayList<ArrayList<Integer>> adj ){
+    private void dfs(int node, ArrayList<Integer> ans, boolean[] vis, ArrayList<ArrayList<Integer>> adj){
+        
         vis[node] = true;
         ans.add(node);
         
